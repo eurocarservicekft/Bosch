@@ -1,0 +1,17 @@
+# ============================================================
+#  Euro Car Service — environment variables
+#  Copy to .env.local (never commit .env.local)
+# ============================================================
+
+# --- Sanity (content) ---
+NEXT_PUBLIC_SANITY_PROJECT_ID=2x8l1i27
+NEXT_PUBLIC_SANITY_DATASET=production
+
+# --- Contact form (Nodemailer / SMTP) ---
+# Gmail app password (needs 2-Step Verification on the Gmail account):
+#   Google Account -> Security -> 2-Step Verification -> App passwords
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=eurocarservicekft@gmail.com
+SMTP_PASS=your-16-char-app-password
+CONTACT_TO=eurocarservicekft@gmail.com

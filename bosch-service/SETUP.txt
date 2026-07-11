@@ -1,0 +1,51 @@
+EURO CAR SERVICE — clean project
+================================
+
+IMPORTANT: put this folder somewhere OUTSIDE OneDrive, e.g.  C:\Code\
+OneDrive causes files to become "cloud placeholders" that Node cannot read
+(this is what caused the missing-logo bug).
+
+
+1) INSTALL
+   Open a terminal IN the bosch-service folder, then:
+       npm install
+
+2) ENVIRONMENT
+   Create a file called  .env.local  in bosch-service with:
+
+       NEXT_PUBLIC_SANITY_PROJECT_ID=2x8l1i27
+       NEXT_PUBLIC_SANITY_DATASET=production
+
+   (Later, for the contact form to actually send email, add:)
+       SMTP_HOST=smtp.gmail.com
+       SMTP_PORT=465
+       SMTP_USER=eurocarservicekft@gmail.com
+       SMTP_PASS=your-16-char-gmail-app-password
+       CONTACT_TO=eurocarservicekft@gmail.com
+
+3) RUN THE WEBSITE
+       npm run dev
+   ->  http://localhost:3000   (redirects to /hu ; English at /en)
+
+4) RUN THE ADMIN (content editor)
+       cd studio
+       npm install
+       npm run dev
+   ->  http://localhost:3333
+
+   To publish the admin for the client:
+       npm run deploy     ->  https://eurocarservice.sanity.studio
+
+
+WHAT'S INSIDE
+-------------
+app/[locale]/     the pages, in Hungarian (/hu) and English (/en)
+components/       header, footer, gallery, contact form, etc.
+lib/              Sanity queries + translations
+public/           logo.svg, mark.svg (red-plate logo)
+app/favicon.ico   browser tab icon
+studio/           the Sanity admin (content editor)
+
+
+NOTE: all texts, prices, photos, opening hours AND background images are
+edited in the Sanity admin - not in the code.
