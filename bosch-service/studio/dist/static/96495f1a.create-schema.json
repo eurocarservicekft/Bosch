@@ -1,0 +1,508 @@
+[
+  {
+    "fields": [
+      {
+        "name": "hu",
+        "type": "string",
+        "title": "Magyar"
+      },
+      {
+        "name": "en",
+        "type": "string",
+        "title": "English"
+      }
+    ],
+    "name": "localeString",
+    "type": "object",
+    "title": "Szöveg (HU / EN)"
+  },
+  {
+    "fields": [
+      {
+        "rows": 3,
+        "name": "hu",
+        "type": "text",
+        "title": "Magyar"
+      },
+      {
+        "rows": 3,
+        "name": "en",
+        "type": "text",
+        "title": "English"
+      }
+    ],
+    "name": "localeText",
+    "type": "object",
+    "title": "Hosszú szöveg (HU / EN)"
+  },
+  {
+    "fields": [
+      {
+        "name": "companyName",
+        "type": "string",
+        "title": "Cégnév"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "title": "Telefon (megjelenő)"
+      },
+      {
+        "name": "phoneHref",
+        "type": "string",
+        "title": "Telefon (hívható, pl. +36204140234)"
+      },
+      {
+        "name": "whatsapp",
+        "type": "string",
+        "title": "WhatsApp (megjelenő)"
+      },
+      {
+        "name": "whatsappHref",
+        "type": "string",
+        "title": "WhatsApp (számjegyek, pl. 36204140244)"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "title": "E-mail"
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "title": "Cím"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mapsUrl",
+        "type": "url",
+        "title": "Google Maps beágyazás URL"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "day",
+                "type": "localeString",
+                "title": "Nap"
+              },
+              {
+                "name": "time",
+                "type": "localeString",
+                "title": "Idő"
+              }
+            ],
+            "type": "object",
+            "name": "openingHour"
+          }
+        ],
+        "name": "hours",
+        "type": "array",
+        "title": "Nyitvatartás"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "facebook",
+        "type": "url",
+        "title": "Facebook URL"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "instagram",
+        "type": "url",
+        "title": "Instagram URL"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document",
+    "title": "Általános beállítások"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "hero",
+        "type": "image",
+        "title": "Főoldal – hero háttér"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "heroMobile",
+        "type": "image",
+        "title": "Főoldal – hero háttér (mobil)"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "cta",
+        "type": "image",
+        "title": "Záró CTA sáv háttér"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "services",
+        "type": "image",
+        "title": "Szolgáltatások oldal fejléc"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "gallery",
+        "type": "image",
+        "title": "Galéria oldal fejléc"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "about",
+        "type": "image",
+        "title": "Rólunk oldal fejléc"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "contact",
+        "type": "image",
+        "title": "Kapcsolat oldal fejléc"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "notFound",
+        "type": "image",
+        "title": "404 oldal háttér"
+      }
+    ],
+    "name": "backgrounds",
+    "type": "document",
+    "title": "Háttérképek"
+  },
+  {
+    "fields": [
+      {
+        "name": "overline",
+        "type": "localeString",
+        "title": "Felső címke"
+      },
+      {
+        "name": "headline",
+        "type": "localeString",
+        "title": "Főcím"
+      },
+      {
+        "name": "subhead",
+        "type": "localeText",
+        "title": "Alcím"
+      }
+    ],
+    "name": "hero",
+    "type": "document",
+    "title": "Főoldal – Hero"
+  },
+  {
+    "fields": [
+      {
+        "name": "overline",
+        "type": "localeString",
+        "title": "Felső címke"
+      },
+      {
+        "name": "title",
+        "type": "localeString",
+        "title": "Cím"
+      },
+      {
+        "name": "subhead",
+        "type": "localeText",
+        "title": "Alcím"
+      },
+      {
+        "name": "intro",
+        "type": "localeText",
+        "title": "Bevezető"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "groupPhoto",
+        "type": "image",
+        "title": "Csoportkép"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "num",
+                "type": "string",
+                "title": "Szám"
+              },
+              {
+                "name": "label",
+                "type": "localeString",
+                "title": "Felirat"
+              }
+            ],
+            "type": "object",
+            "name": "stat"
+          }
+        ],
+        "name": "stats",
+        "type": "array",
+        "title": "Számok"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "localeString",
+                "title": "Név"
+              }
+            ],
+            "type": "object",
+            "name": "cert"
+          }
+        ],
+        "name": "certs",
+        "type": "array",
+        "title": "Minősítések"
+      },
+      {
+        "name": "closing",
+        "type": "localeText",
+        "title": "Záró idézet"
+      }
+    ],
+    "name": "about",
+    "type": "document",
+    "title": "Rólunk oldal"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "localeString",
+        "title": "Cím"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Karbantartás",
+              "value": "karbantartas"
+            },
+            {
+              "title": "Diagnosztika",
+              "value": "diagnosztika"
+            },
+            {
+              "title": "Javítás",
+              "value": "javitas"
+            },
+            {
+              "title": "Gumiszerviz",
+              "value": "gumi"
+            }
+          ],
+          "layout": "radio"
+        },
+        "name": "category",
+        "type": "string",
+        "title": "Kategória"
+      },
+      {
+        "name": "description",
+        "type": "localeText",
+        "title": "Rövid leírás"
+      },
+      {
+        "name": "priceText",
+        "type": "localeString",
+        "title": "Ár"
+      },
+      {
+        "options": {
+          "list": [
+            "gauge",
+            "diagnostics",
+            "brake",
+            "wheel",
+            "tire",
+            "climate",
+            "battery",
+            "engine"
+          ]
+        },
+        "name": "icon",
+        "type": "string",
+        "title": "Ikon"
+      },
+      {
+        "name": "order",
+        "type": "number",
+        "title": "Sorrend"
+      },
+      {
+        "name": "featured",
+        "type": "boolean",
+        "title": "Kiemelt"
+      },
+      {
+        "name": "body",
+        "type": "localeText",
+        "title": "Részletes leírás"
+      }
+    ],
+    "name": "service",
+    "type": "document",
+    "title": "Szolgáltatás"
+  },
+  {
+    "fields": [
+      {
+        "name": "quote",
+        "type": "localeText",
+        "title": "Idézet"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "title": "Név"
+      },
+      {
+        "name": "city",
+        "type": "string",
+        "title": "Város"
+      },
+      {
+        "name": "order",
+        "type": "number",
+        "title": "Sorrend"
+      }
+    ],
+    "name": "testimonial",
+    "type": "document",
+    "title": "Vélemény"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "localeString",
+        "title": "Cím"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image",
+        "title": "Kép"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Műhely",
+              "value": "muhely"
+            },
+            {
+              "title": "Csapat",
+              "value": "csapat"
+            },
+            {
+              "title": "Felszerelés",
+              "value": "felszereles"
+            }
+          ]
+        },
+        "name": "category",
+        "type": "string",
+        "title": "Kategória"
+      },
+      {
+        "name": "order",
+        "type": "number",
+        "title": "Sorrend"
+      }
+    ],
+    "name": "galleryItem",
+    "type": "document",
+    "title": "Galéria kép"
+  }
+]

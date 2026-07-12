@@ -71,8 +71,15 @@ h1,h2,h3,h4{margin:0;font-weight:500;}
 
 /* ---------- header ---------- */
 header{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--header-h);display:flex;align-items:center;
-  background:transparent;border-bottom:1px solid transparent;transition:background .3s ease, border-color .3s ease;}
-header.solid{background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background .3s ease, border-color .3s ease, box-shadow .3s ease;}
+/* soft scrim behind the transparent header so nav text stays legible over photos */
+header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(to bottom, rgba(255,255,255,.75), rgba(255,255,255,0));
+  opacity:1;transition:opacity .3s ease;}
+header.solid::before{opacity:0;}
+header.solid{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.06);}
 .nav{display:flex;align-items:center;justify-content:space-between;width:100%;}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.01em;}
 .logo .mark{width:30px;height:30px;border-radius:6px;background:var(--red);display:grid;place-items:center;color:#fff;font-family:var(--mono);font-weight:600;font-size:14px;}

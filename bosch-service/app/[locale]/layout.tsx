@@ -37,6 +37,18 @@ export async function generateMetadata({
       type: "website",
       locale: hu ? "hu_HU" : "en_GB",
       siteName: "Euro Car Service",
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Euro Car Service — Autószerviz Tatabányán",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/og-image.jpg"],
     },
   };
 }
