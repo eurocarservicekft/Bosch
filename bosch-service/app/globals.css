@@ -428,3 +428,76 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 0 32
 .logo-img{height:42px;width:215px;max-width:100%;object-fit:contain;display:block;}
 footer .logo-img{height:46px;width:236px;}
 @media (max-width:760px){ .logo-img{height:34px;width:174px;} }
+
+/* =========================================================================
+   MOBILE LAYOUT FIXES
+   1. header no longer collides with hero / page-header text
+   2. contact form card centred + full width
+   3. trust bar items centred and aligned
+   4. page overlines ("KAPCSOLAT" etc.) always clear the logo
+   5. more breathing room under the cover images
+   ========================================================================= */
+
+/* --- 4 + 5: page headers clear the fixed header, and get bottom room --- */
+.page-header{
+  padding-top:calc(var(--header-h) + 28px);
+  padding-bottom:56px;
+  align-items:flex-end;
+}
+.page-header .overline{display:inline-block;}
+
+@media (max-width:760px){
+  .page-header{
+    min-height:auto;                 /* height follows content, not the viewport */
+    padding-top:calc(var(--header-h) + 34px);
+    padding-bottom:44px;
+  }
+  .page-header h1{font-size:32px;line-height:1.2;margin-top:10px;}
+  .page-header .ph-sub{font-size:16px;line-height:1.55;margin-top:10px;}
+
+  /* --- 1: hero spacing --- */
+  .hero{min-height:100svh;}
+  .hero-content{padding-top:calc(var(--header-h) + 20px);}
+  .hero-inner h1{font-size:38px;line-height:1.12;}
+  .hero-inner .sub{font-size:16px;line-height:1.6;margin-top:16px;}
+  .hero-ctas{
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+    margin-top:28px;
+    padding-bottom:28px;             /* stops buttons hugging the photo edge */
+  }
+  .hero-ctas .btn{width:100%;justify-content:center;}
+
+  /* --- 3: trust bar: one centred row per item, no stray dots --- */
+  .trustbar-inner{
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    padding:22px var(--gutter);
+  }
+  .trust-item{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+    width:100%;
+    max-width:260px;                 /* equal width -> icons line up vertically */
+    text-align:left;
+  }
+  .trust-item svg{flex:0 0 auto;}
+  .trust-dot{display:none;}
+
+  /* --- 2: contact form card fills the width, sits square --- */
+  .contact-split{display:flex;flex-direction:column;gap:28px;width:100%;}
+  .contact-info{order:-1;}           /* phone/hours first on mobile */
+  .form-card{
+    order:0;
+    width:100%;
+    margin:0;
+    padding:24px 20px;
+    border-radius:12px;
+    box-sizing:border-box;
+  }
+  .form-card h2{font-size:24px;margin-bottom:18px;}
+}
