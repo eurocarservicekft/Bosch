@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="err-page" style={{ padding: 0 }}>
+    <section className="err-page">
       <div className="err-bg" />
       <div className="err-overlay" />
       <div className="err-content">

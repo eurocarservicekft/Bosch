@@ -10,7 +10,7 @@ export default async function GalleryPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <section className="page-header ph-gallery" style={{ padding: 0 }}>
+      <section className="page-header ph-gallery">
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">

@@ -11,7 +11,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <section className="page-header ph-services" style={{ padding: 0 }}>
+      <section className="page-header ph-services">
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">

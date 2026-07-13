@@ -13,7 +13,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <>
-      <section className="page-header ph-about" style={{ padding: 0 }}>
+      <section className="page-header ph-about">
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">

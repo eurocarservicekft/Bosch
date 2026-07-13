@@ -501,3 +501,30 @@ footer .logo-img{height:46px;width:236px;}
   }
   .form-card h2{font-size:24px;margin-bottom:18px;}
 }
+
+/* ---------- MOBILE FIX v2 ----------
+   The page-header sections had an inline "padding:0" which silently killed the
+   padding rules above. That is removed in the page files; these rules now apply.
+   Also: keep hero content clear of the sticky bottom bar.
+   ----------------------------------- */
+@media (max-width:760px){
+  /* hero: let content breathe, never sit under the sticky bar */
+  .hero{min-height:auto;padding-top:calc(var(--header-h) + 40px);padding-bottom:40px;}
+  .hero-content{padding-top:0;}
+  .hero-inner{max-width:100%;}
+  .hero-inner h1{font-size:36px;line-height:1.15;margin-top:14px;}
+  .hero-ctas{margin-top:30px;padding-bottom:0;}
+  .scroll-cue{display:none;}          /* no room for it on a phone */
+
+  /* page headers: consistent, never behind the logo */
+  .page-header{
+    min-height:auto;
+    padding-top:calc(var(--header-h) + 40px);
+    padding-bottom:40px;
+  }
+  .page-header .overline{margin-bottom:4px;}
+  .page-header h1{font-size:32px;line-height:1.18;}
+
+  /* the sticky bottom bar overlaps the last section: give every page room */
+  footer{padding-bottom:84px;}
+}

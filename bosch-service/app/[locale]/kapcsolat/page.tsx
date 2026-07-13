@@ -12,7 +12,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <section className="page-header ph-contact" style={{ padding: 0 }}>
+      <section className="page-header ph-contact">
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">

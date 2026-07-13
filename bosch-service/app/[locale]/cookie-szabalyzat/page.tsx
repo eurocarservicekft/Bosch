@@ -10,7 +10,7 @@ export default async function CookiePage({ params }: { params: Promise<{ locale:
   const locale = toLocale(rawLocale);
   return (
     <>
-      <section className="page-header ph-legal" style={{ padding: 0 }}>
+      <section className="page-header ph-legal">
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">

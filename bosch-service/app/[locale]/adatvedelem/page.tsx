@@ -11,7 +11,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   const s = await getSettings();
   return (
     <>
-      <section className="page-header ph-legal" style={{ padding: 0 }}>
+      <section className="page-header ph-legal">
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">
