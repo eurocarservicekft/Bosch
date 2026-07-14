@@ -42,7 +42,6 @@ export default function Header({
       <header id="site-header" className={solid ? "solid" : ""}>
         <div className="wrap nav">
           <Link href={`/${locale}`} className="logo">
-            <span className="mark">{(s.companyName ?? "E").charAt(0)}</span>
             <span className="logo-text">{s.companyName}</span>
             <span className="logo-dot">.</span>
           </Link>
