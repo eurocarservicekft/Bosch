@@ -589,3 +589,80 @@ footer .logo{font-size:23px;}
 @media (max-width:760px){
   .foot-bottom{flex-direction:column;align-items:flex-start;gap:10px;}
 }
+
+/* =========================================================================
+   BLUE PASS — balanced red / blue / white
+   Roles:
+     RED   = brand mark + primary action (call, submit, primary CTA)
+     BLUE  = structure, navigation, surfaces, secondary action
+     WHITE = base
+   ========================================================================= */
+
+/* --- surfaces: give the grey bands a cool blue cast --- */
+:root{
+  --bg-2:#F2F6FA;                       /* was neutral grey -> cool blue-white */
+  --bg-3:#E3EBF3;
+  --blue-deep:#1B5C93;
+  --blue-line:rgba(34,113,179,.22);
+}
+
+/* --- secondary button becomes BLUE (red stays the primary action) --- */
+.btn--ghost{border-color:var(--blue);color:var(--blue-deep);background:transparent;}
+.btn--ghost:hover{background:var(--blue-tint);border-color:var(--blue);transform:translateY(-2px);}
+
+/* --- navigation underline: blue --- */
+.nav-links a::after{background:var(--blue);}
+.nav-links a:hover{color:var(--blue-deep);}
+.lang a:hover{color:var(--blue-deep);}
+
+/* --- header: blue hairline when solid --- */
+header.solid{border-bottom-color:var(--blue-line);}
+
+/* --- trust bar: blue band, blue icons --- */
+.trustbar{background:var(--bg-2);border-top:1px solid var(--blue-line);border-bottom:1px solid var(--blue-line);}
+.trust-item svg{color:var(--blue);}
+
+/* --- service cards / tiles: blue structure, blue hover --- */
+.svc-tile{border-color:var(--border);}
+.svc-tile:hover{border-color:var(--blue);box-shadow:0 10px 30px rgba(34,113,179,.10);}
+.svc-card:hover{border-color:var(--blue);}
+.svc-price{color:var(--blue-deep);}
+.svc-more{color:var(--blue-deep);}
+.svc-cta-band a{color:var(--blue-deep);}
+
+/* --- testimonials: blue band + blue edge --- */
+.testi{background:var(--bg-2);}
+.testi-card{border-left:3px solid var(--blue);}
+
+/* --- stats band: blue --- */
+.stats-band{background:var(--bg-2);border-top:1px solid var(--blue-line);border-bottom:1px solid var(--blue-line);}
+
+/* --- gallery tiles: blue hover frame --- */
+.masonry .tile{border-color:var(--border);transition:border-color .25s ease, transform .25s ease;}
+.masonry .tile:hover{border-color:var(--blue);transform:translateY(-3px);}
+
+/* --- final CTA: blue border + secondary link --- */
+.final-cta{border-color:var(--blue-line);}
+.final-cta .link-ghost:hover{color:var(--blue-deep);}
+
+/* --- footer --- */
+.foot-badge{border-color:var(--blue-line);}
+.foot-badge .dot{background:var(--blue);}
+footer a:hover{color:var(--blue-deep);}
+.foot-grid h4{color:var(--text);border-bottom:2px solid var(--blue);display:inline-block;padding-bottom:4px;}
+
+/* --- mobile bar: red = call (action), blue = navigate --- */
+.mobilebar a:nth-child(1) svg{color:var(--red);}
+.mobilebar a:nth-child(2) svg,
+.mobilebar a:nth-child(3) svg{color:var(--blue);}
+
+/* --- body links --- */
+.prose a{color:var(--blue-deep);}
+.directions h3{color:var(--text);}
+
+/* --- contact info icons: blue (informational) --- */
+.info-row > svg{color:var(--blue);}
+.hours-table td{border-bottom:1px solid var(--blue-line);}
+
+/* --- page-header overline keeps the red brand label, blue rule beneath --- */
+.page-header .ph-overlay{border-bottom:3px solid var(--blue);}
