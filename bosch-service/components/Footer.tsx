@@ -83,6 +83,16 @@ export default function Footer({ s, locale, tr }: { s: SettingsDoc; locale: Loca
 
         <div className="foot-bottom">
           <span>© {new Date().getFullYear()} {s.companyName}. {tr.common.rightsReserved}</span>
+          <span className="foot-credit">
+            {tr.common.madeBy}{" "}
+            <a
+              href="https://alivedesignstudio.net"
+              target="_blank"
+              rel="noopener"
+            >
+              {tr.common.madeByName}
+            </a>
+          </span>
           <span>
             <Link href={`/${locale}/adatvedelem`}>{tr.common.privacy}</Link> ·{" "}
             <Link href={`/${locale}/cookie-szabalyzat`}>{tr.common.cookiePolicy}</Link> ·{" "}
