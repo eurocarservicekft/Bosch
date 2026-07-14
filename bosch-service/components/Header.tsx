@@ -41,9 +41,10 @@ export default function Header({
     <>
       <header id="site-header" className={solid ? "solid" : ""}>
         <div className="wrap nav">
-          <Link href={`/${locale}`} className="logo" aria-label={s.companyName}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt={s.companyName ?? "Euro Car Service"} className="logo-img" />
+          <Link href={`/${locale}`} className="logo">
+            <span className="mark">{(s.companyName ?? "E").charAt(0)}</span>
+            <span className="logo-text">{s.companyName}</span>
+            <span className="logo-dot">.</span>
           </Link>
 
           <nav className="nav-links">

@@ -18,6 +18,9 @@
   --bg-3:#EAEAEC;
   --red:#C8102E;
   --red-soft:#e0344f;
+  --blue:#2271B3;        /* RAL 5015 */
+  --blue-soft:#3E8BC9;
+  --blue-tint:rgba(34,113,179,.10);
   --steel:#0A3D62;
   --text:#16191D;
   --text-2:#5C616B;
@@ -528,3 +531,53 @@ footer .logo-img{height:46px;width:236px;}
   /* the sticky bottom bar overlaps the last section: give every page room */
   footer{padding-bottom:84px;}
 }
+
+/* =========================================================================
+   WORDMARK (text) + BLUE ACCENT  (RAL 5015 #2271B3)
+   Red stays the ACTION colour (buttons, phone, CTAs).
+   Blue is the SECONDARY / informational accent, so the two never compete.
+   ========================================================================= */
+
+/* --- text wordmark (replaces the SVG logo) --- */
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);
+  font-size:22px;font-weight:600;letter-spacing:-.01em;color:var(--text);white-space:nowrap;}
+.logo .mark{width:30px;height:30px;border-radius:6px;background:var(--red);
+  display:grid;place-items:center;color:#fff;font-family:var(--mono);
+  font-weight:600;font-size:14px;flex:0 0 auto;}
+.logo-text{line-height:1;}
+.logo-dot{color:var(--blue);margin-left:-6px;}   /* the accent dot is now blue */
+footer .logo{font-size:23px;}
+@media (max-width:760px){
+  .logo{font-size:18px;gap:8px;}
+  .logo .mark{width:26px;height:26px;font-size:12px;}
+}
+
+/* --- blue accents --- */
+/* service icons on the home cards: informational, so blue */
+.svc-ico{background:var(--blue-tint);color:var(--blue);}
+
+/* stat numbers on Rólunk */
+.stat .num{color:var(--blue);}
+
+/* testimonial quote mark */
+.testi .quote-mark{color:var(--blue);opacity:.5;}
+
+/* certification chips get a blue edge */
+.cert{border-left:3px solid var(--blue);}
+
+/* form fields focus blue (calm), buttons stay red (action) */
+.form-card input:focus,
+.form-card textarea:focus,
+.form-card [data-slot="select-trigger"]:focus,
+.form-card button[role="combobox"]:focus{
+  border-color:var(--blue) !important;
+  box-shadow:0 0 0 3px var(--blue-tint);
+}
+
+/* scroll cue line */
+.scroll-cue .line{background:linear-gradient(var(--blue),transparent);}
+
+/* why-us icon tiles: hover to blue, so hovering feels informational not "danger" */
+.why-col:hover .why-icon{border-color:var(--blue);}
+.why-icon svg{stroke:var(--red);}
+.why-col:hover .why-icon svg{stroke:var(--blue);}
