@@ -756,3 +756,52 @@ header .nav-right{margin-left:auto;}
   .rate-band{padding:18px 18px;}
   .rate-value{font-size:20px;}
 }
+
+/* =========================================================================
+   FIX: nav back to centre + wordmark spacing above the red rule
+   Note: the red line above "HIVATALOS BOSCH PARTNER" comes from Tailwind's
+   own .overline utility (text-decoration: overline) — it is part of the text,
+   so spacing is controlled by the wordmark's margin below.
+   ========================================================================= */
+
+/* --- navigation centred again (no logo on the left any more) --- */
+header .nav{justify-content:space-between;gap:0;}
+header .nav::before{content:"";flex:1 1 0;}      /* invisible left spacer */
+header .nav-links{flex:0 0 auto;}
+header .nav-right{flex:1 1 0;justify-content:flex-end;margin-left:0;}
+
+/* --- wordmark: clear breathing room above the red rule --- */
+.hero-wordmark{
+  margin-bottom:clamp(24px, 3.2vw, 40px);
+  padding-bottom:0;
+}
+
+@media (max-width:760px){
+  header .nav::before{flex:0 0 0;}               /* no spacer needed on mobile */
+  header .nav-right{flex:1 1 auto;}
+  .hero-wordmark{
+    font-size:clamp(28px, 8.5vw, 36px);
+    margin-bottom:22px;
+    line-height:1.1;
+  }
+}
+
+/* =========================================================================
+   FIX: wordmark sits LOWER (just above the red rule, not far from it)
+   The "HIVATALOS BOSCH PARTNER" text and its red line are untouched — that
+   line is text-decoration on the text itself, so it can never detach.
+   ========================================================================= */
+.hero-wordmark{
+  margin-top:clamp(12px, 2.6vw, 30px);   /* pushes the name DOWN */
+  margin-bottom:14px;                    /* sits just above the red rule */
+}
+
+/* 5 nav items now (Főoldal added) — slightly tighter so it never wraps */
+header .nav-links{gap:26px;}
+@media (max-width:1100px){
+  header .nav-links{gap:20px;font-size:15px;}
+}
+
+@media (max-width:760px){
+  .hero-wordmark{margin-top:8px;margin-bottom:12px;}
+}

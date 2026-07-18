@@ -5,6 +5,7 @@ export const defaultLocale: Locale = "hu";
 export const ui = {
   hu: {
     nav: {
+      home: "Főoldal",
       services: "Szolgáltatások",
       about: "Rólunk",
       gallery: "Galéria",
@@ -107,6 +108,7 @@ export const ui = {
   },
   en: {
     nav: {
+      home: "Home",
       services: "Services",
       about: "About us",
       gallery: "Gallery",

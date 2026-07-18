@@ -27,6 +27,7 @@ export default function Header({
   }, []);
 
   const nav = [
+    { href: `/${locale}`, label: tr.nav.home },
     { href: `/${locale}/szolgaltatasok`, label: tr.nav.services },
     { href: `/${locale}/rolunk`, label: tr.nav.about },
     { href: `/${locale}/galeria`, label: tr.nav.gallery },
