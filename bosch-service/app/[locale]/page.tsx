@@ -25,6 +25,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="hero-content">
           <div className="wrap">
             <div className="hero-inner">
+              <span className="hero-wordmark">
+                {s.companyName}
+                <span className="hero-wordmark-dot">.</span>
+              </span>
               <span className="overline">{t(hero.overline, locale)}</span>
               <h1>{t(hero.headline, locale)}</h1>
               <p className="sub">{t(hero.subhead, locale)}</p>

@@ -41,10 +41,6 @@ export default function Header({
     <>
       <header id="site-header" className={solid ? "solid" : ""}>
         <div className="wrap nav">
-          <Link href={`/${locale}`} className="logo">
-            <span className="logo-text">{s.companyName}</span>
-            <span className="logo-dot">.</span>
-          </Link>
 
           <nav className="nav-links">
             {nav.map((n) => (

@@ -23,6 +23,16 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
       <section>
         <div className="wrap">
+          {t(s.hourlyRate, locale) && (
+            <div className="rate-band">
+              <div className="rate-main">
+                <span className="rate-label">{tr.services.hourlyLabel}</span>
+                <span className="rate-value">{t(s.hourlyRate, locale)}</span>
+              </div>
+              <p className="rate-note">{tr.services.hourlyNote}</p>
+            </div>
+          )}
+
           <div className="svc-grid">
             {services.map((svc, i) => (
               <Reveal key={svc._id} delay={i % 3}>
@@ -36,6 +46,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
               </Reveal>
             ))}
           </div>
+          <p className="vat-note">{tr.services.vatNote}</p>
           <div className="svc-cta-band">
             {tr.services.notFound} <a href={`tel:${s.phoneHref}`}>{s.phone}</a>
           </div>

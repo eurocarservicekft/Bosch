@@ -53,6 +53,9 @@ export const ui = {
       subtitle:
         "Karbantartástól a komplex diagnosztikáig — minden egy helyen, gyári minőségben.",
       notFound: "Nem találja amit keres? Hívjon minket:",
+      hourlyLabel: "Rezsióradíj",
+      hourlyNote: "Ha a hiba nem egyértelmű, előbb feltárjuk a problémát — ilyenkor rezsióradíjjal számolunk.",
+      vatNote: "A feltüntetett árak nettó árak, az ÁFA-t nem tartalmazzák.",
     },
     gallery: {
       title: "A munkánk, közelről",
@@ -152,6 +155,9 @@ export const ui = {
       subtitle:
         "From maintenance to complex diagnostics — all in one place, at factory quality.",
       notFound: "Can't find what you're looking for? Call us:",
+      hourlyLabel: "Hourly labour rate",
+      hourlyNote: "If the fault isn't obvious, we diagnose the problem first — that work is billed at our hourly rate.",
+      vatNote: "All prices shown are net prices and do not include VAT.",
     },
     gallery: {
       title: "Our work, up close",

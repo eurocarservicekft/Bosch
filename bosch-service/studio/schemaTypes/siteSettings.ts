@@ -31,6 +31,7 @@ export const siteSettings = defineType({
         },
       ],
     }),
+    defineField({ name: "hourlyRate", title: "Rezsióradíj (pl. 20 000 Ft/óra + ÁFA)", type: "localeString" }),
     defineField({ name: "facebook", title: "Facebook URL", type: "url" }),
     defineField({ name: "instagram", title: "Instagram URL", type: "url" }),
   ],

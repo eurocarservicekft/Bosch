@@ -704,3 +704,55 @@ footer a:hover{color:var(--blue-deep);}
 .logo{gap:0;}
 .logo .mark{display:none;}
 .logo-dot{margin-left:1px;}
+
+/* =========================================================================
+   WORDMARK MOVED INTO THE HERO
+   ========================================================================= */
+
+/* header: no wordmark -> nav sits left, actions right */
+header .nav{justify-content:flex-start;gap:40px;}
+header .nav-right{margin-left:auto;}
+
+/* the big blue wordmark, above the "HIVATALOS BOSCH PARTNER" overline */
+.hero-wordmark{
+  display:block;
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(34px, 5.2vw, 60px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  color:var(--blue-deep);
+  margin-bottom:26px;
+}
+.hero-wordmark-dot{color:var(--red);}
+
+@media (max-width:760px){
+  .hero-wordmark{font-size:32px;margin-bottom:20px;}
+  header .nav{gap:0;}
+}
+
+/* ---------- hourly rate band + VAT note (services page) ---------- */
+.rate-band{
+  background:var(--bg-2);
+  border:1px solid var(--blue-line);
+  border-left:4px solid var(--blue);
+  border-radius:12px;
+  padding:22px 26px;
+  margin-bottom:34px;
+}
+.rate-main{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+.rate-label{
+  font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;
+  font-size:12px;color:var(--blue-deep);
+}
+.rate-value{
+  font-family:var(--mono);font-size:24px;font-weight:600;color:var(--text);
+}
+.rate-note{margin:10px 0 0;color:var(--text-2);font-size:15px;line-height:1.55;max-width:640px;}
+.vat-note{
+  margin:26px 0 0;color:var(--text-2);font-size:14px;font-style:italic;text-align:center;
+}
+@media (max-width:760px){
+  .rate-band{padding:18px 18px;}
+  .rate-value{font-size:20px;}
+}

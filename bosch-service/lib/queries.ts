@@ -13,6 +13,7 @@ export type SettingsDoc = {
   email?: string;
   address?: string;
   mapsUrl?: string;
+  hourlyRate?: Loc;
   hours?: { _key: string; day?: Loc; time?: Loc }[];
   facebook?: string;
   instagram?: string;
