@@ -18,8 +18,17 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale = toLocale(rawLocale);
   const hu = locale !== "en";
+
+  // Until eurocarservice.hu is connected, Netlify's own URL is used, so the
+  // share preview works on the .netlify.app address too. Once the custom
+  // domain is primary, Netlify sets URL to it automatically.
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.URL ??
+    "https://eurocarservice.hu";
+
   return {
-    metadataBase: new URL("https://eurocarservice.hu"),
+    metadataBase: new URL(siteUrl),
     title: {
       default: hu
         ? "Euro Car Service — Autószerviz Tatabányán"
