@@ -8,31 +8,23 @@ import { Label } from "./ui/label";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "./ui/select";
 import type { Locale } from "@/lib/i18n";
 
-const topicsByLocale: Record<Locale, string[]> = {
-  hu: [
-    "Időszakos szerviz",
-    "Bosch diagnosztika",
-    "Fékrendszer",
-    "Futómű és geometria",
-    "Gumiszerviz",
-    "Klímaszerviz",
-    "Egyéb",
-  ],
-  en: [
-    "Scheduled service",
-    "Bosch diagnostics",
-    "Brakes",
-    "Suspension & alignment",
-    "Tyre service",
-    "Air-conditioning",
-    "Other",
-  ],
-};
-
 type Status = "idle" | "sending" | "ok" | "error";
 
-export default function ContactForm({ locale, tr }: { locale: Locale; tr: any }) {
-  const topics = topicsByLocale[locale] ?? topicsByLocale.hu;
+export default function ContactForm({
+  locale,
+  tr,
+  topics: incoming,
+}: {
+  locale: Locale;
+  tr: any;
+  topics?: string[];
+}) {
+  // Options come from the services in the CMS, so the form always matches
+  // the real price list. "Egyéb" / "Other" is always the last option.
+  const topics =
+    incoming && incoming.length
+      ? [...incoming, tr.contact.otherTopic]
+      : [tr.contact.otherTopic];
   const [status, setStatus] = useState<Status>("idle");
   const [topic, setTopic] = useState(topics[0]);
   const [error, setError] = useState("");

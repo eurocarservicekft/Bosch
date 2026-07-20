@@ -1,7 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 import Wordmark from "@/components/Wordmark";
 import { MailIcon, PinIcon, ClockIcon } from "@/components/Icons";
-import { getSettings } from "@/lib/queries";
+import { getSettings, getServices } from "@/lib/queries";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
 import { t } from "@/lib/sanity";
 
@@ -9,7 +9,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const { locale: rawLocale } = await params;
   const locale = toLocale(rawLocale);
   const tr = getUi(locale);
-  const s = await getSettings();
+  const [s, services] = await Promise.all([getSettings(), getServices()]);
+
+  // dropdown options = the real services from the CMS, in the right language
+  const topics = services
+    .map((svc) => t(svc.title, locale))
+    .filter(Boolean);
 
   return (
     <>
@@ -27,7 +32,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <section>
         <div className="wrap">
           <div className="contact-split">
-            <ContactForm locale={locale} tr={tr} />
+            <ContactForm locale={locale} tr={tr} topics={topics} />
 
             <div className="contact-info">
               <a href={`tel:${s.phoneHref}`} className="big-phone">
