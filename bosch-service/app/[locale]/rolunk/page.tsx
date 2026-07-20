@@ -1,12 +1,14 @@
 import Reveal from "@/components/Reveal";
+import Wordmark from "@/components/Wordmark";
 import { UsersIcon } from "@/components/Icons";
-import { getAbout } from "@/lib/queries";
+import { getAbout, getSettings } from "@/lib/queries";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
 import { t, urlFor } from "@/lib/sanity";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: rawLocale } = await params;
   const locale = toLocale(rawLocale);
+  const s = await getSettings();
   const tr = getUi(locale);
   const a = await getAbout();
   const photo = urlFor(a.groupPhoto, 1600);
@@ -17,6 +19,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">
+          <Wordmark name={s.companyName} />
           <span className="overline">{t(a.overline, locale) || tr.nav.about}</span>
           <h1>{t(a.title, locale)}</h1>
           <p className="ph-sub">{t(a.subhead, locale)}</p>

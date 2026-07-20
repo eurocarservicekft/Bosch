@@ -13,7 +13,6 @@ export default function Footer({ s, locale, tr }: { s: SettingsDoc; locale: Loca
           <div>
             <Link href={`/${locale}`} className="logo">
               <span className="logo-text">{s.companyName}</span>
-              <span className="logo-dot">.</span>
             </Link>
             <p className="foot-tag">
               {locale === "hu"

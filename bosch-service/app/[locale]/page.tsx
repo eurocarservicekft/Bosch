@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import HeroBg from "@/components/HeroBg";
+import Wordmark from "@/components/Wordmark";
 import { PhoneIcon, ShieldIcon, ClockIcon, Wrench, ServiceIcon, whyIcons } from "@/components/Icons";
 import { getSettings, getHero, getServices, getTestimonials } from "@/lib/queries";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
@@ -25,10 +26,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="hero-content">
           <div className="wrap">
             <div className="hero-inner">
-              <span className="hero-wordmark">
-                {s.companyName}
-                <span className="hero-wordmark-dot">.</span>
-              </span>
+              <Wordmark name={s.companyName} />
               <span className="overline">{t(hero.overline, locale)}</span>
               <h1>{t(hero.headline, locale)}</h1>
               <p className="sub">{t(hero.subhead, locale)}</p>

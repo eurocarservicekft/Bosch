@@ -1,4 +1,5 @@
 import { getSettings, getServices } from "@/lib/queries";
+import Wordmark from "@/components/Wordmark";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
 import { t } from "@/lib/sanity";
 import Reveal from "@/components/Reveal";
@@ -15,6 +16,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">
+          <Wordmark name={s.companyName} />
           <span className="overline">{tr.nav.services}</span>
           <h1>{tr.services.title}</h1>
           <p className="ph-sub">{tr.services.subtitle}</p>

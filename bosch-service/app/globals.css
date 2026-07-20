@@ -805,3 +805,38 @@ header .nav-links{gap:26px;}
 @media (max-width:760px){
   .hero-wordmark{margin-top:8px;margin-bottom:12px;}
 }
+
+/* =========================================================================
+   FINAL FIXES
+   A. mobile menu: "Főoldal" was hidden UNDER the fixed header (header z-60,
+      menu z-55, no top padding) -> it could not be tapped.
+   B. hero on mobile still had height:90vh, so the wordmark pushed the
+      buttons out of the box.
+   C. wordmark now appears on every page header (smaller than in the hero).
+   ========================================================================= */
+
+/* --- A. mobile menu clears the header --- */
+.mobile-menu{padding:calc(var(--header-h) + 16px) 28px 32px;justify-content:flex-start;overflow-y:auto;}
+.mobile-menu a{font-size:26px;padding:16px 0;}
+
+/* --- B. hero fits its content on mobile --- */
+@media (max-width:760px){
+  .hero{
+    height:auto;                 /* was 90vh -> content overflowed */
+    min-height:auto;
+    padding-top:calc(var(--header-h) + 26px);
+    padding-bottom:44px;
+  }
+  .hero-inner .sub{margin-bottom:26px;}
+  .hero-ctas{margin-top:0;}
+}
+
+/* --- C. wordmark on the inner page headers --- */
+.page-header .hero-wordmark{
+  font-size:clamp(22px, 3.2vw, 34px);
+  margin-top:0;
+  margin-bottom:12px;
+}
+@media (max-width:760px){
+  .page-header .hero-wordmark{font-size:22px;margin-bottom:10px;}
+}

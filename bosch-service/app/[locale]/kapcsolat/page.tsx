@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import Wordmark from "@/components/Wordmark";
 import { MailIcon, PinIcon, ClockIcon } from "@/components/Icons";
 import { getSettings } from "@/lib/queries";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
@@ -16,6 +17,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">
+          <Wordmark name={s.companyName} />
           <span className="overline">{tr.nav.contact}</span>
           <h1>{tr.contact.title}</h1>
           <p className="ph-sub">{tr.contact.subtitle}</p>

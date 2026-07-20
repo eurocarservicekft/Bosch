@@ -86,6 +86,14 @@ export default async function LocaleLayout({
     telephone: s.phone,
     email: s.email,
     address: { "@type": "PostalAddress", streetAddress: s.address },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "07:00",
+        closes: "16:00",
+      },
+    ],
     url: "https://eurocarservice.hu",
   };
 

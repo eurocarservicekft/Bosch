@@ -1,10 +1,12 @@
 import Gallery from "@/components/Gallery";
-import { getGallery } from "@/lib/queries";
+import Wordmark from "@/components/Wordmark";
+import { getGallery, getSettings } from "@/lib/queries";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
 
 export default async function GalleryPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: rawLocale } = await params;
   const locale = toLocale(rawLocale);
+  const s = await getSettings();
   const tr = getUi(locale);
   const items = await getGallery();
 
@@ -14,6 +16,7 @@ export default async function GalleryPage({ params }: { params: Promise<{ locale
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">
+          <Wordmark name={s.companyName} />
           <span className="overline">{tr.nav.gallery}</span>
           <h1>{tr.gallery.title}</h1>
           <p className="ph-sub">{tr.gallery.subtitle}</p>

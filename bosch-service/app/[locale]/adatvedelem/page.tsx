@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Wordmark from "@/components/Wordmark";
 import Link from "next/link";
 import { getSettings } from "@/lib/queries";
 import { toLocale } from "@/lib/i18n";
@@ -15,6 +16,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
         <div className="ph-bg" />
         <div className="ph-overlay" />
         <div className="wrap">
+          <Wordmark name={s.companyName} />
           <span className="overline">Jogi információk</span>
           <h1 className="reveal in">Adatvédelmi tájékoztató</h1>
         </div>
