@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import HeroBg from "@/components/HeroBg";
 import Wordmark from "@/components/Wordmark";
-import { PhoneIcon, ShieldIcon, ClockIcon, Wrench, ServiceIcon, whyIcons } from "@/components/Icons";
+import { PhoneIcon, ShieldIcon, ClockIcon, Wrench, EvIcon, ServiceIcon, whyIcons } from "@/components/Icons";
 import { getSettings, getHero, getServices, getTestimonials } from "@/lib/queries";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
 import { t } from "@/lib/sanity";
@@ -54,6 +54,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="trust-item"><ClockIcon /> {tr.home.trust2}</div>
           <span className="trust-dot">·</span>
           <div className="trust-item"><Wrench /> {tr.home.trust3}</div>
+          <span className="trust-dot">·</span>
+          <div className="trust-item trust-item--ev"><EvIcon /> {tr.home.trust4}</div>
         </div>
       </div>
 

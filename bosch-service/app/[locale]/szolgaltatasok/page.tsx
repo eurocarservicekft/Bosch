@@ -1,4 +1,5 @@
 import { getSettings, getServices } from "@/lib/queries";
+import { EvIcon } from "@/components/Icons";
 import Wordmark from "@/components/Wordmark";
 import { getUi, type Locale, toLocale } from "@/lib/i18n";
 import { t } from "@/lib/sanity";
@@ -25,6 +26,14 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
       <section>
         <div className="wrap">
+          <div className="ev-band">
+            <div className="ev-icon"><EvIcon /></div>
+            <div>
+              <h2>{tr.services.evTitle}</h2>
+              <p>{tr.services.evText}</p>
+            </div>
+          </div>
+
           {t(s.hourlyRate, locale) && (
             <div className="rate-band">
               <div className="rate-main">

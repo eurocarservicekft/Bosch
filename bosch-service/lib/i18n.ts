@@ -48,12 +48,15 @@ export const ui = {
       trust1: "Hivatalos Bosch Partner",
       trust2: "20+ év tapasztalat",
       trust3: "Modern Bosch diagnosztika",
+      trust4: "Elektromos autókat is fogadunk",
     },
     services: {
       title: "A teljes Bosch spektrum",
       subtitle:
         "Karbantartástól a komplex diagnosztikáig — minden egy helyen, gyári minőségben.",
       notFound: "Nem találja amit keres? Hívjon minket:",
+      evTitle: "Elektromos és hibrid autókat is fogadunk",
+      evText: "Nem csak a hagyományos benzines és dízel autókhoz értünk — elektromos és hibrid járműveket is szervizelünk. Ha bizonytalan, hívjon minket, és megmondjuk, tudunk-e segíteni.",
       hourlyLabel: "Rezsióradíj",
       hourlyNote: "Ha a hiba nem egyértelmű, előbb feltárjuk a problémát — ilyenkor rezsióradíjjal számolunk.",
       vatNote: "A feltüntetett árak nettó árak, az ÁFA-t nem tartalmazzák.",
@@ -152,12 +155,15 @@ export const ui = {
       trust1: "Official Bosch Partner",
       trust2: "20+ years of experience",
       trust3: "Modern Bosch diagnostics",
+      trust4: "Electric vehicles welcome",
     },
     services: {
       title: "The full Bosch spectrum",
       subtitle:
         "From maintenance to complex diagnostics — all in one place, at factory quality.",
       notFound: "Can't find what you're looking for? Call us:",
+      evTitle: "We service electric and hybrid vehicles too",
+      evText: "We don't only work on petrol and diesel cars — electric and hybrid vehicles are welcome as well. If you're unsure, give us a call and we'll tell you whether we can help.",
       hourlyLabel: "Hourly labour rate",
       hourlyNote: "If the fault isn't obvious, we diagnose the problem first — that work is billed at our hourly rate.",
       vatNote: "All prices shown are net prices and do not include VAT.",

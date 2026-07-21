@@ -840,3 +840,40 @@ header .nav-links{gap:26px;}
 @media (max-width:760px){
   .page-header .hero-wordmark{font-size:22px;margin-bottom:10px;}
 }
+
+/* ---------- electric vehicles: highlight band (services page) ---------- */
+.ev-band{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  background:linear-gradient(120deg, var(--blue-tint), rgba(34,113,179,.03));
+  border:1px solid var(--blue);
+  border-radius:14px;
+  padding:26px 30px;
+  margin-bottom:22px;
+}
+.ev-icon{
+  flex:0 0 auto;
+  width:52px;height:52px;border-radius:12px;
+  background:var(--blue);
+  display:grid;place-items:center;
+}
+.ev-icon svg{width:26px;height:26px;color:#fff;stroke:#fff;}
+.ev-band h2{
+  font-family:var(--serif);font-size:24px;font-weight:600;
+  margin:2px 0 8px;color:var(--blue-deep);
+}
+.ev-band p{margin:0;color:var(--text-2);font-size:16px;line-height:1.6;max-width:720px;}
+
+/* trust bar: the EV item gets the blue icon so it reads as "extra capability" */
+.trust-item--ev svg{color:var(--blue);}
+
+@media (max-width:900px){
+  .trustbar-inner{flex-wrap:wrap;justify-content:center;row-gap:12px;}
+}
+@media (max-width:760px){
+  .ev-band{flex-direction:column;gap:14px;padding:22px 20px;}
+  .ev-icon{width:44px;height:44px;}
+  .ev-band h2{font-size:20px;}
+  .ev-band p{font-size:15px;}
+}

@@ -38,6 +38,11 @@ export const ShieldIcon = (p: P) => (
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
   </svg>
 );
+export const EvIcon = (p: P) => (
+  <svg {...base} strokeWidth={2} {...p}>
+    <polygon points="13 2 4 14 11 14 10 22 19 10 12 10 13 2" />
+  </svg>
+);
 export const ArrowRight = (p: P) => (
   <svg {...base} strokeWidth={2} {...p}>
     <line x1="5" y1="12" x2="19" y2="12" />
